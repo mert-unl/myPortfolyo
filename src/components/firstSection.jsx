@@ -2,8 +2,8 @@ import React from "react";
 
 export function FirstSection() {
   return (
-    <div className="bg-[linear-gradient(to_right,_#4731D3_67%,_#CBF281_33%)] h-[671px] flex flex-col pt-5 items-center ">
-      <div className="flex flex-row justify-end ms-142 font-bold text-[15px] space-x-5">
+    <div className="bg-[linear-gradient(to_right,_#4731D3_67%,_#CBF281_33%)] flex flex-col h-screen  items-center ">
+      <div className="flex flex-row justify-end ms-115 font-bold text-[15px] mt-5 space-x-5">
         <p className="text-[#CBF281]">TÜRKÇE'YE GEÇ</p>
 
         <div className="relative inline-block w-11 h-5">
@@ -24,7 +24,7 @@ export function FirstSection() {
 
       <p className="text-[#CBF281] text-[32px] font-bold mr-185">mert</p>
 
-      <div className="flex flex-row space-x-25 items-center">
+      <div className="flex flex-row mt-[148px] space-x-25 items-center">
         <div className="flex flex-col  max-w-[529px]  space-y-5 pt-10">
           <h1 className="text-[54px]  font-inter font-bold text-[#CBF281]">
             I am a Frontend Developer...
@@ -39,10 +39,10 @@ export function FirstSection() {
               type="button"
               className="text-[#3730a3] bg-white hover:bg-[#b0c6f7]/90  font-medium rounded-[6px] text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
-              <img               className="mr-2"
-
+              <img
+                className="mr-2"
                 src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000"
-                 width="26px"
+                width="26px"
                 height="26px"
               />
               Github
@@ -52,8 +52,8 @@ export function FirstSection() {
               type="button"
               className="text-[#3730a3] bg-white hover:bg-[#b0c6f7]/90  font-medium rounded-[6px] text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
-              <img 
-              className="mr-2"
+              <img
+                className="mr-2"
                 src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000"
                 width="26px"
                 height="26px"
