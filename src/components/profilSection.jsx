@@ -3,7 +3,7 @@ import React from "react";
 export default function ProfilSection() {
   return (
     <div className=" text-white py-20 bg-[#4731D3]">
-      <div className=" flex-col mx-75">
+      <div className=" flex-col mx-90">
         <h1 className="text-[#CBF281] font-bold text-[48px]">Profile</h1>
 
         <div className="flex flex-row gap-8 mt-5">

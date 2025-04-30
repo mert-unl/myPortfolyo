@@ -32,8 +32,8 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section className=" flex flex-row items-center h-screen justify-center  bg-white">
-      <div className="flex flex-row justify-between w-[50%] h-[60%] bg-[#F5F5F5] p-5npm ">
+    <section className=" flex flex-row items-center  justify-center h-screen bg-white">
+      <div className="flex flex-row  gap-40 h-[60%] bg-[#F5F5F5] p-5npm ">
         <p className="text-[48px] font-bold text-[#4832D3]">Skills</p>
 
         <div className="grid grid-cols-1">

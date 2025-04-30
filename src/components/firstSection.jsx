@@ -3,7 +3,7 @@ import React from "react";
 export function FirstSection() {
   return (
     <div className="bg-[linear-gradient(to_right,_#4731D3_67%,_#CBF281_33%)] flex flex-col h-screen  items-center ">
-      <div className="flex flex-row justify-end ms-115 font-bold text-[15px] mt-5 space-x-5">
+      <div className="flex flex-row justify-end ms-110 font-bold text-[15px] mt-5 space-x-5">
         <p className="text-[#CBF281]">TÜRKÇE'YE GEÇ</p>
 
         <div className="relative inline-block w-11 h-5">
