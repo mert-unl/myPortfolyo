@@ -1,1 +1,89 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+@theme {
+  
+} */
+:root {
+  --color-customLang1: #caf181;
+  --color-customLang2: #d9d9d9;
+  --color-customSwitch: #8f88ff;
+  --color-customDarkLight: #4731d3;
+  --color-customBlue: #4731d3;
+  --color-customYellow: #cbf281;
+  --color-customWhite: #ffffff;
+  --color-customWhite: #ffffff;
+
+  --color-customGithubBack: #ffffff;
+  --color-customGithubText: #3730a3;
+
+  --color-customTextSkills: #777777;
+  --color-customSkill: #4832d3;
+  --color-customYellow2: #cbf281;
+  --color-customBlackText: #383838;
+  --color-customProjectName: #4731d3;
+  --color-customButtonBack: #4731d3;
+  --color-customViewSite: #120b39;
+  --color-customFooterBack: #f9f9f9;
+  --color-customFooterText: #120b39;
+  --color-customFooterIcon: #4731d3;
+
+  --font-inter: "Inter", sans-serif;
+}
+
+.dark {
+  --color-customLang1: #bab2e7;
+  --color-customLang2: #777777;
+  --color-customSwitch: #3a3a3a;
+
+  --color-customDarkLight: #d9d9d9;
+  --color-customBlue: #171043;
+  --color-customYellow: #211f0b;
+  --color-customWhite: #2b2727;
+
+  --color-customGithubBack: #252128;
+  --color-customGithubText: #ffffff;
+
+  --color-customTextSkills: #ffffff;
+  --color-customSkill: #cbf281;
+  --color-customYellow2: #1a210b;
+  --color-customBlackText: #ffffff;
+  --color-customProjectName: #c1baed;
+  --color-customButtonBack: #8173da;
+  --color-customViewSite: #cbf281;
+  --color-customFooterBack: #252128;
+  --color-customFooterText: #ffffff;
+  --color-customFooterIcon: #8f88ff;
+
+  --font-inter: "sans-serif";
+}
+
+/*
+.sepia {
+  // --color-primary: #f50808;
+  --color-text: #3e2a0e;
+}
+*/
+/* Dark tema için variant tanımı */
+@custom-variant dark (&:where(.dark, .dark *));
+/* Sepia tema için variant tanımı */
+@custom-variant sepia (&:where(.sepia, .sepia *));
+
+/*
+.light {
+  --color-customPurple: #4731d3;
+  --color-customYellow: #cbf281;
+  --color-customYellow2: #caf181;
+  --color-customGray: #777777;
+}
+
+.dark {
+  --color-customPurple: #171043;
+  --color-customYellow: #211f0b;
+  --color-customYellow2: #bab2e7;
+  --color-customGray: #ffffff;
+}
+ */

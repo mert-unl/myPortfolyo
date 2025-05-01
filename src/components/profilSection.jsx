@@ -2,26 +2,26 @@ import React from "react";
 
 export default function ProfilSection() {
   return (
-    <div className=" text-white py-20 bg-[#4731D3]">
+    <div className=" font-inter text-white py-24 bg-[var(--color-customBlue)]">
       <div className=" flex-col mx-90">
         <h1 className="text-[#CBF281] font-bold text-[48px]">Profile</h1>
 
-        <div className="flex flex-row gap-8 mt-5">
+        <div className="flex flex-row gap-8 mt-4">
           <div>
-            <h1 className="text-[30px] font-weight:500">Basic Information</h1>
+            <h1 className="text-[30px] font-medium">Basic Information</h1>
 
-            <div className="flex flex-row gap-5 ">
-              <div className="text-[#CBF281] font-weight:600 text-[16px]">
+            <div className="flex flex-row gap-5 mt-4">
+              <div className="flex flex-col text-[#CBF281] font-semibold  gap-6 text-[16px]">
                 <p>Birthdate</p>
                 <p>Location</p>
                 <p>Education</p>
-                <p>Preferred Position</p>
+                <p className="mt-5">Preferred Position</p>
               </div>
 
-              <div>
+              <div className="flex flex-col text-[16px] font-normal gap-6">
                 <p>20.06.1998</p>
                 <p>Antalya</p>
-                <p>Antalya Bilim</p>
+                <p>Antalya Bilim University, Civil Engineering</p>
                 <p>Frontend,UI</p>
               </div>
             </div>

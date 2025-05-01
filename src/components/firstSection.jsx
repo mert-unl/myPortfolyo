@@ -1,25 +1,110 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { useContext } from "react";
+import { languageContext } from "../App.jsx";
 
 export function FirstSection() {
+  //TEMA
+
+  const { language, setLanguage, sayi, lang } = useContext(languageContext);
+
+  const initialTheme = localStorage.getItem("theme") || "light";
+
+  const [theme, setTheme] = useState(initialTheme);
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+
+    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+  };
+
+  const handleLanguageChange = () => {
+    if (language === "en") {
+      setLanguage("tr");
+    } else {
+      setLanguage("en");
+    }
+  };
+
+  //DİL
+
   return (
-    <div className="bg-[linear-gradient(to_right,_#4731D3_67%,_#CBF281_33%)] flex flex-col h-screen  items-center ">
-      <div className="flex flex-row justify-end ms-110 font-bold text-[15px] mt-5 space-x-5">
-        <p className="text-[#CBF281]">TÜRKÇE'YE GEÇ</p>
+    <div
+      className={`bg-[linear-gradient(to_right,_var(--color-customBlue)_67%,_var(--color-customYellow)_33%)] flex flex-col h-screen font-[var(--font-inter)] items-center`}
+    >
+      <div className="flex flex-row justify-end ms-135 font-bold text-[15px] mt-6  space-x-5">
+        <p
+          onClick={handleLanguageChange}
+          className="text-[var(--color-customLang1)] cursor-pointer"
+        >
+          {lang.lang}
+          <span className="text-[var(--color-customLang2)]">{lang.switch}</span>
+        </p>
 
-        <div className="relative inline-block w-11 h-5">
-          <input
-            checked
-            id="switch-component-1"
-            type="checkbox"
-            className="peer appearance-none w-11 h-5  bg-[#CBF281] rounded-full checked:bg-[#8f88ff] cursor-pointer transition-colors duration-300"
-          />
-          <label
-            for="switch-component-1"
-            className="absolute p-1 left-0.5 top-1 w-3 h-3  bg-[#CBF281] rounded-full border border-[#CBF281] shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:[#8f88ff] cursor-pointer"
-          ></label>
+        <div className="flex flex-row gap-2">
+          <div className="relative inline-block ">
+            {/*Dış kısmı */}
+            <input
+              checked={theme === "light"}
+              id="switch-component-1"
+              type="checkbox"
+              onChange={toggleTheme}
+              className="peer appearance-none w-11 h-5  bg-[var(--color-customSwitch)] rounded-full   cursor-pointer transition-colors duration-300"
+            />
+
+            {/* İç kısmı */}
+            <label
+              htmlFor="switch-component-1"
+              className="absolute bottom-1 w-5 h-5 flex items-center justify-center rounded-full transition-transform duration-400 peer-checked:translate-x-6 cursor-pointer"
+            >
+              {theme === "dark" ? (
+                <svg
+                  className="w-4 h-4 text-[#FFE86E] "
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
+                </svg>
+              ) : (
+                <svg
+                  className="w-4 h-4 text-[#FFE86E]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3
+             m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707
+             m12.728 0l-.707.707M6.343 17.657l-.707.707
+             M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              )}
+            </label>
+          </div>
+
+          <p className="text-[var(--color-customDarkLight)] text-[15px] font-bold">
+            {theme === "dark" ? `${lang.lightTheme}` : `${lang.darkTheme}`}
+          </p>
         </div>
-
-        <p className="text-[#4731D3]">DARK MODE</p>
       </div>
 
       <p className="text-[#CBF281] text-[32px] font-bold mr-185">mert</p>
@@ -27,37 +112,26 @@ export function FirstSection() {
       <div className="flex flex-row mt-[148px] space-x-25 items-center">
         <div className="flex flex-col  max-w-[529px]  space-y-5 pt-10">
           <h1 className="text-[54px]  font-inter font-bold text-[#CBF281]">
-            I am a Frontend Developer...
+            {lang.title}
           </h1>
           <p className="text-white font-inter text-[24px] ">
-            ...who likes to craft solid and scable frontend products with great
-            user experiences.
+            {lang.description}
           </p>
 
-          <div className="flex flex-row space-x-5">
+          <div className="flex flex-row gap-1">
             <button
               type="button"
-              className="text-[#3730a3] bg-white hover:bg-[#b0c6f7]/90  font-medium rounded-[6px] text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
+              className="text-[var(--color-customGithubText)] bg-[var(--color-customGithubBack)] border border-white hover:bg-[var(--color-customLang1)]  text-l font-medium rounded-[6px] w-32 h-13 p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
-              <img
-                className="mr-2"
-                src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000"
-                width="26px"
-                height="26px"
-              />
+              <FaGithub className="w-[26px] h-[26px] mr-3" />
               Github
             </button>
 
             <button
               type="button"
-              className="text-[#3730a3] bg-white hover:bg-[#b0c6f7]/90  font-medium rounded-[6px] text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
+              className="text-[var(--color-customGithubText)]  bg-[var(--color-customGithubBack)] border border-white text-l  hover:bg-[var(--color-customLang1)] font-medium rounded-[6px] w-35 h-13  p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
-              <img
-                className="mr-2"
-                src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000"
-                width="26px"
-                height="26px"
-              />
+              <FaLinkedinIn className="w-[26px] h-[26px] mr-3 " />
               Linkedin
             </button>
           </div>
