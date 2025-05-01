@@ -61,16 +61,36 @@
   --font-inter: "sans-serif";
 }
 
-/*
-.sepia {
-  // --color-primary: #f50808;
-  --color-text: #3e2a0e;
+/* 🌇 Turuncu & Siyah Teması */
+.orange {
+  --color-customLang1: #ff9e4d;
+  --color-customLang2: #c4c4c4;
+  --color-customSwitch: #ffbe7b;
+
+  --color-customDarkLight: #2a2a2a;
+  --color-customBlue: #111111;
+  --color-customYellow: #ffaa22;
+  --color-customWhite: #fdfdfd;
+
+  --color-customGithubBack: #1e1e1e;
+  --color-customGithubText: #ff9e4d;
+
+  --color-customTextSkills: #555555;
+  --color-customSkill: #ff7a00;
+  --color-customYellow2: #fac679;
+  --color-customBlackText: #1a1a1a;
+  --color-customProjectName: #ff6f00;
+  --color-customButtonBack: #ff7a00;
+  --color-customViewSite: #f1720a;
+  --color-customFooterBack: #1e1e1e;
+  --color-customFooterText: #f5f5f5;
+  --color-customFooterIcon: #ff9e4d;
 }
-*/
+
 /* Dark tema için variant tanımı */
 @custom-variant dark (&:where(.dark, .dark *));
 /* Sepia tema için variant tanımı */
-@custom-variant sepia (&:where(.sepia, .sepia *));
+@custom-variant orange (&:where(.orange, .orange *));
 
 /*
 .light {

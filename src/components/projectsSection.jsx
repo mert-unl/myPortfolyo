@@ -1,28 +1,29 @@
+import { useContext } from "react";
+import { languageContext } from "../App";
+
 export default function ProjectsSection() {
   //bg-[#4731D3]
+  const { lang } = useContext(languageContext);
 
   const projects = [
     {
       imgsrc: "https://picsum.photos/360/360?21",
       name: "Workintech",
-      description:
-        "lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
+      description: `${lang.project1}`,
       usedTech: ["React", "Node.js", "Tailwind"],
     },
 
     {
       imgsrc: "https://picsum.photos/360/360?5",
       name: "My Pizza Project",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aperiam perspiciatis voluptatem dolore quasi nobis eius atque laboriosam, labore maxime impedit sequi quos quisquam. Eligendi ducimus dolorum autem minima omnis.",
+      description: `${lang.project2}`,
       usedTech: ["Html", "Css", "Node.js"],
     },
 
     {
       imgsrc: "https://picsum.photos/360/360?28",
       name: "WitFlix",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis facilis voluptatum aspernatur ex corrupti? Exercitationem eaque corporis ad voluptatum? Sunt, fugit. Delectus odit ipsam eveniet repudiandae mollitia non, esse unde!",
+      description: `${lang.project3}`,
       usedTech: ["React", "Node.js", "Redux"],
     },
   ];
@@ -31,7 +32,7 @@ export default function ProjectsSection() {
     <section className="bg-[var(--color-customYellow2)]  font-inter py-12">
       <div className="flex flex-col mt-4  mx-90">
         <h1 className="text-[var(--color-customSkill)] text-[48px] font-bold">
-          Projects
+          {lang.projects}
         </h1>
 
         {projects.map((projects) => (
@@ -60,7 +61,7 @@ export default function ProjectsSection() {
                 </div>
                 <div className="text-[var(--color-customViewSite)] font-medium text-xs gap-2 flex flex-row">
                   <p className="underline underline-offset-3 cursor-pointer">
-                    View Site
+                    {lang.viewSite}{" "}
                   </p>
                   <p className="underline underline-offset-3 cursor-pointer">
                     Github

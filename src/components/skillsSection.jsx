@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import figma from "../assets/figma-logo.png";
 import javascript from "../assets/js-logo.png";
 import node from "../assets/node-logo.png";
@@ -6,6 +6,7 @@ import react from "../assets/React-logo.png";
 import redux from "../assets/vscode-logo.png";
 import vscode from "../assets/redux-logo.png";
 import "@fontsource/inter";
+import { languageContext } from "../App";
 
 export default function SkillsSection() {
   const skills1 = [
@@ -38,11 +39,13 @@ export default function SkillsSection() {
     },
   ];
 
+  const { lang } = useContext(languageContext);
+
   return (
     <section className=" font-inter flex flex-row items-center justify-center h-screen bg-[var(--color-customWhite)]">
       <div className="flex flex-row  justify-center gap-34">
         <p className=" text-[48px] font-bold text-[var(--color-customSkill)]">
-          Skills
+          {lang.skills}{" "}
         </p>
 
         <div className="grid grid-cols-1 gap-8 font-inter ">

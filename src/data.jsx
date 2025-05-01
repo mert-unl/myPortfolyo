@@ -21,18 +21,20 @@ export const languages = {
     aboutMe:
       "Merhaba, ben Mert. Bir web geliştiricisiyim ve yazılım geliştirmeye tutkuluyum. Frontend, UI ve UX konularında çalışıyorum. Ayrıca backend ile ilgili de bilgi sahibiyim.",
 
-    projects: "Projelerim",
+    projects: "Projeler",
 
     project1:
       "WorkinTech’te çalıştım. Burada yazılım geliştirme ve proje yönetimi konularında deneyim kazandım.",
     project2: "Pizza projesini tamamladım.",
     project3: "Netflix clone projesini tamamladım.",
+    school: "Antalya Bilim Universitesi, İnşaat Mühendisliği",
 
-    viewSite: "Siteyi Görüntüle",
+    viewSite: "Siteye Git",
 
     skills: "Yetenekler",
-    sendMessage: "Bana Mesaj Gönder",
-    messageText: "Sorun mu var? Ya da sadece merhaba mı demek istiyorsun?",
+    sendMessage: "Bana bir mesaj gönder!",
+    messageText:
+      "Bir sorunuz veya öneriniz mi var, ya da sadece merhaba mı demek istiyorsun?",
   },
 
   en: {
@@ -53,12 +55,12 @@ export const languages = {
     location: "Location",
     education: "Educational Background",
     position: "Preferred Position",
-
+    school: "Antalya Bilim University, Civil Engineering",
     about: "About Me",
     aboutMe:
       "Hi, I'm Mert. I'm a web developer passionate about software development. I work on frontend, UI, and UX topics. I also have knowledge about backend development.",
 
-    projects: "My Projects",
+    projects: "Projects",
 
     project1:
       "I worked at WorkinTech, where I gained experience in software development and project management.",
@@ -68,7 +70,8 @@ export const languages = {
     viewSite: "View Site",
 
     skills: "Skills",
-    sendMessage: "Send Me a Message",
-    messageText: "Having a problem? Or just want to say hi?",
+    sendMessage: "Send me a message!",
+    messageText:
+      "Got a question or proposal, or just want to say hello? Go ahead.",
   },
 };

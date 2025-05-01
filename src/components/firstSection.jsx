@@ -7,7 +7,7 @@ import { languageContext } from "../App.jsx";
 export function FirstSection() {
   //TEMA
 
-  const { language, setLanguage, sayi, lang } = useContext(languageContext);
+  const { language, setLanguage, lang } = useContext(languageContext);
 
   const initialTheme = localStorage.getItem("theme") || "light";
 
@@ -32,6 +32,16 @@ export function FirstSection() {
     }
   };
 
+  const handleOrange = () => {
+    setTheme((prevTheme) =>
+      prevTheme === "light" || "dark" ? "orange" : "light"
+    );
+
+    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+
+    setTheme("orange");
+    document.documentElement.classList.add("orange");
+  };
   //DİL
 
   return (
@@ -106,9 +116,15 @@ export function FirstSection() {
           </p>
         </div>
       </div>
-
-      <p className="text-[#CBF281] text-[32px] font-bold mr-185">mert</p>
-
+      <div className="flex flex-col">
+        <p className="text-[#CBF281] text-[32px] font-bold mr-185">mert</p>
+        <p
+          onClick={handleOrange}
+          className="text-white font-medium cursor-pointer text-sm"
+        >
+          Special Theme
+        </p>
+      </div>
       <div className="flex flex-row mt-[148px] space-x-25 items-center">
         <div className="flex flex-col  max-w-[529px]  space-y-5 pt-10">
           <h1 className="text-[54px]  font-inter font-bold text-[#CBF281]">
