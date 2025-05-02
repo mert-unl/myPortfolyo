@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { FirstSection } from "./components/firstSection";
+import { HeroSection } from "./components/heroSection";
 import FooterSection from "./components/footerSection";
 import ProfilSection from "./components/profilSection";
 import ProjectsSection from "./components/projectsSection";
@@ -17,7 +17,7 @@ function App() {
   return (
     <languageContext.Provider value={{ language, setLanguage, sayi, lang }}>
       <>
-        <FirstSection />
+        <HeroSection />
         <SkillsSection />
         <ProfilSection />
         <ProjectsSection />

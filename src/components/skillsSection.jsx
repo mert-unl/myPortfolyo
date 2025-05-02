@@ -41,15 +41,17 @@ export default function SkillsSection() {
 
   const { lang } = useContext(languageContext);
 
+  const data = lang.skillSection;
+
   return (
     <section className=" font-inter flex flex-row items-center justify-center h-screen bg-[var(--color-customWhite)]">
       <div className="flex flex-row  justify-center gap-34">
         <p className=" text-[48px] font-bold text-[var(--color-customSkill)]">
-          {lang.skills}{" "}
+          {data.title}
         </p>
 
-        <div className="grid grid-cols-1 gap-8 font-inter ">
-          {skills1.map((skills) => (
+        <div className="grid grid-cols-2  gap-8 font-inter ">
+          {data.skills.map((skills) => (
             <div className="flex flex-row items-center ">
               <img
                 className="rounded-[6px] h-[128px] w-[128px]"
@@ -63,6 +65,7 @@ export default function SkillsSection() {
           ))}
         </div>
 
+        {/* Second row of skills 
         <div className="grid grid-cols-1 gap-8">
           {skills2.map((skills) => (
             <div className="flex flex-row items-center">
@@ -77,6 +80,7 @@ export default function SkillsSection() {
             </div>
           ))}
         </div>
+        */}
       </div>
     </section>
   );

@@ -2,45 +2,22 @@ import { useContext } from "react";
 import { languageContext } from "../App";
 
 export default function ProjectsSection() {
-  //bg-[#4731D3]
   const { lang } = useContext(languageContext);
-
-  const projects = [
-    {
-      imgsrc: "https://picsum.photos/360/360?21",
-      name: "Workintech",
-      description: `${lang.project1}`,
-      usedTech: ["React", "Node.js", "Tailwind"],
-    },
-
-    {
-      imgsrc: "https://picsum.photos/360/360?5",
-      name: "My Pizza Project",
-      description: `${lang.project2}`,
-      usedTech: ["Html", "Css", "Node.js"],
-    },
-
-    {
-      imgsrc: "https://picsum.photos/360/360?28",
-      name: "WitFlix",
-      description: `${lang.project3}`,
-      usedTech: ["React", "Node.js", "Redux"],
-    },
-  ];
+  const data = lang.projectsSection;
 
   return (
     <section className="bg-[var(--color-customYellow2)]  font-inter py-12">
       <div className="flex flex-col mt-4  mx-90">
         <h1 className="text-[var(--color-customSkill)] text-[48px] font-bold">
-          {lang.projects}
+          {data.title}
         </h1>
 
-        {projects.map((projects) => (
+        {data.projects.map((projects) => (
           <div className="justify-center   shadow-[0px_18px_88px_-4px_rgba(24,39,75,0.14),0px_8px_28px_-6px_rgba(24,39,75,0.12)] my-4 bg-[var(--color-customWhite)] items-center rounded-[12px]">
             <div className="flex flex-row py-2 ">
               <img
                 className="rounded-tl-[12px] rounded-bl-[12px]"
-                src={projects.imgsrc}
+                src={projects.image}
               />
               <div className="flex flex-col gap-4 p-2 ml-5 justify-center">
                 <h2 className="text-[var(--color-customProjectName)] text-[32px] font-bold">
@@ -60,12 +37,23 @@ export default function ProjectsSection() {
                   ))}
                 </div>
                 <div className="text-[var(--color-customViewSite)] font-medium text-xs gap-2 flex flex-row">
-                  <p className="underline underline-offset-3 cursor-pointer">
-                    {lang.viewSite}{" "}
-                  </p>
-                  <p className="underline underline-offset-3 cursor-pointer">
-                    Github
-                  </p>
+                  <a
+                    href={projects.linkWebsite}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-3 cursor-pointer"
+                  >
+                    {data.viewSite}
+                  </a>
+
+                  <a
+                    href={projects.linkGithub}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-3 cursor-pointer"
+                  >
+                    {data.github}
+                  </a>
                 </div>
               </div>
             </div>

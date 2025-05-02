@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { languageContext } from "../App.jsx";
 
-export function FirstSection() {
+export function HeroSection() {
   //TEMA
 
   const { language, setLanguage, lang } = useContext(languageContext);
@@ -42,6 +42,9 @@ export function FirstSection() {
     setTheme("orange");
     document.documentElement.classList.add("orange");
   };
+
+  const data = lang.heroSection;
+
   //DİL
 
   return (
@@ -53,8 +56,8 @@ export function FirstSection() {
           onClick={handleLanguageChange}
           className="text-[var(--color-customLang1)] cursor-pointer"
         >
-          {lang.lang}
-          <span className="text-[var(--color-customLang2)]">{lang.switch}</span>
+          {data.lang1}
+          <span className="text-[var(--color-customLang2)]">{data.lang2}</span>
         </p>
 
         <div className="flex flex-row gap-2">
@@ -112,12 +115,14 @@ export function FirstSection() {
           </div>
 
           <p className="text-[var(--color-customDarkLight)] text-[15px] font-bold">
-            {theme === "dark" ? `${lang.lightTheme}` : `${lang.darkTheme}`}
+            {theme === "dark" ? `${data.lightTheme}` : `${data.darkTheme}`}
           </p>
         </div>
       </div>
       <div className="flex flex-col">
-        <p className="text-[#CBF281] text-[32px] font-bold mr-185">mert</p>
+        <p className="text-[#CBF281] text-[32px] font-bold mr-185">
+          {data.name}
+        </p>
         <p
           onClick={handleOrange}
           className="text-white font-medium cursor-pointer text-sm"
@@ -128,10 +133,10 @@ export function FirstSection() {
       <div className="flex flex-row mt-[148px] space-x-25 items-center">
         <div className="flex flex-col  max-w-[529px]  space-y-5 pt-10">
           <h1 className="text-[54px]  font-inter font-bold text-[#CBF281]">
-            {lang.title}
+            {data.title}
           </h1>
           <p className="text-white font-inter text-[24px] ">
-            {lang.description}
+            {data.description}
           </p>
 
           <div className="flex flex-row gap-1">
@@ -140,7 +145,7 @@ export function FirstSection() {
               className="text-[var(--color-customGithubText)] bg-[var(--color-customGithubBack)] border border-white hover:bg-[var(--color-customLang1)]  text-l font-medium rounded-[6px] w-32 h-13 p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
               <FaGithub className="w-[26px] h-[26px] mr-3" />
-              Github
+              {data.socials[0].alt_text}
             </button>
 
             <button
@@ -148,14 +153,14 @@ export function FirstSection() {
               className="text-[var(--color-customGithubText)]  bg-[var(--color-customGithubBack)] border border-white text-l  hover:bg-[var(--color-customLang1)] font-medium rounded-[6px] w-35 h-13  p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
               <FaLinkedinIn className="w-[26px] h-[26px] mr-3 " />
-              Linkedin
+              {data.socials[1].alt_text}
             </button>
           </div>
         </div>
 
         <img
           className="rounded-[18px]"
-          src="https://picsum.photos/350/375"
+          src={data.profileImage}
           alt="profilepic"
           width="350px"
           height="375px"
