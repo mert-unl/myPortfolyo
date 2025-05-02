@@ -31,7 +31,7 @@
   --color-customFooterText: #120b39;
   --color-customFooterIcon: #4731d3;
 
-  --font-inter: "Inter", sans-serif;
+  --font-inter: "Inter";
 }
 
 .dark {
@@ -58,7 +58,7 @@
   --color-customFooterText: #ffffff;
   --color-customFooterIcon: #8f88ff;
 
-  --font-inter: "sans-serif";
+  --font-inter: "Inter", sans-serif;
 }
 
 /* 🌇 Turuncu & Siyah Teması */

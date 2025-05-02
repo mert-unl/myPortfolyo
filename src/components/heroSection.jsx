@@ -4,10 +4,15 @@ import { FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { languageContext } from "../App.jsx";
 import axios from "axios";
-import { languages } from "../data.jsx";
+//import { languages } from "../store/data.jsx";
+import { toast } from "react-toastify";
+
+import dataLang from "../store/data.json";
 
 export function HeroSection() {
   //TEMA
+
+  console.log("json:" + JSON.stringify(dataLang));
 
   const { language, setLanguage, lang } = useContext(languageContext);
 
@@ -23,18 +28,30 @@ export function HeroSection() {
   }
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
 
-    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+    if (language === "tr") {
+      toast.success(
+        `Tema ${newTheme === "dark" ? "koyu" : "açık"} moda ayarlandı!`
+      );
+    } else {
+      toast.success(
+        `Theme set to ${newTheme === "dark" ? "dark" : "light"} mode!`
+      );
+    }
   };
 
   const handleLanguageChange = () => {
     if (language === "en") {
       localStorage.setItem("lang", "tr");
       setLanguage("tr");
+      toast.success("Dil Türkçe'ye ayarlandı!");
     } else {
       localStorage.setItem("lang", "en");
       setLanguage("en");
+      toast.success("Language switched to English!");
     }
   };
 
@@ -51,6 +68,7 @@ export function HeroSection() {
 
   const data = lang.heroSection;
 
+  /*
   axios
     .post(
       "https://reqres.in/api/register",
@@ -89,13 +107,13 @@ export function HeroSection() {
     })
     .catch((err) => {
       console.error("Giriş hatası:", err.response?.data || err.message);
-    });
+    }); */
 
   axios
     .post(
       "https://reqres.in/api/workintech",
       {
-        languages,
+        dataLang,
       },
       {
         headers: {
@@ -110,29 +128,20 @@ export function HeroSection() {
       console.error("Workintech hatası:", err.response?.data || err.message);
     });
 
-  axios
-    .get("https://reqres.in/api/workintech")
-    .then((res) => {
-      console.log("Workintechget başarılı:", res.data);
-    })
-    .catch((err) => {
-      console.error("Workintechget hatası:", err.response?.data || err.message);
-    });
-
   return (
-    <div
+    <section
       className={`bg-[linear-gradient(to_right,_var(--color-customBlue)_70%,_var(--color-customYellow)_33%)] flex flex-col h-screen font-[var(--font-inter)] items-center`}
     >
-      <div className="flex flex-col sm:flex-row  justify-center font-bold text-[15px] mt-6  space-x-5">
+      <div className="flex flex-row ms-45 md:ms-158 justify-center font-bold text-sm mt-6  space-x-5">
         <p
           onClick={handleLanguageChange}
-          className="text-[var(--color-customLang1)] cursor-pointer"
+          className="text-[var(--color-customLang1)] cursor-pointer gap-1  flex flex-col sm:flex-row"
         >
           {data.lang1}
           <span className="text-[var(--color-customLang2)]">{data.lang2}</span>
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-2">
+        <div className="flex sm:flex-row flex-col gap-2">
           <div className="relative inline-block ">
             {/*Dış kısmı */}
             <input
@@ -186,16 +195,14 @@ export function HeroSection() {
             </label>
           </div>
 
-          <p className="text-[var(--color-customDarkLight)] text-[15px] font-bold">
+          <p className="text-[var(--color-customDarkLight)] text-sm font-bold">
             {theme === "dark" ? `${data.lightTheme}` : `${data.darkTheme}`}
           </p>
         </div>
       </div>
 
-      <div className="flex flex-col ">
-        <p className="text-[#CBF281] text-[32px] font-bold flex-start">
-          {data.name}
-        </p>
+      <div className="flex   mr-70 md:mr-204 flex-col">
+        <p className="text-[#CBF281] text-4xl font-bold ">{data.name}</p>
         <p
           onClick={handleOrange}
           className="text-white font-medium cursor-pointer text-sm"
@@ -204,7 +211,7 @@ export function HeroSection() {
         </p>
       </div>
 
-      <div className="flex sm:flex-row flex-col mt-[148px] space-x-25 items-center">
+      <div className="flex sm:flex-row flex-col md:mt-36 space-x-45 items-center">
         <div className="flex flex-col  max-w-[529px]  space-y-5 pt-10">
           <h1 className="text-3xl  md:text-5xl  font-inter font-bold text-[#CBF281]">
             {data.title}
@@ -225,7 +232,7 @@ export function HeroSection() {
               type="button"
               className="text-[var(--color-customGithubText)] bg-[var(--color-customGithubBack)] border border-white hover:bg-[var(--color-customLang1)]  text-l font-medium rounded-[6px] w-32 h-13 p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
-              <FaGithub className="w-[26px] h-[26px] mr-3" />
+              <FaGithub className="w-6 h-6 mr-3" />
               {data.socials[0].alt_text}
             </button>
 
@@ -240,18 +247,18 @@ export function HeroSection() {
               type="button"
               className="text-[var(--color-customGithubText)]  bg-[var(--color-customGithubBack)] border border-white text-l  hover:bg-[var(--color-customLang1)] font-medium rounded-[6px] w-35 h-13  p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
-              <FaLinkedinIn className="w-[26px] h-[26px] mr-3 " />
+              <FaLinkedinIn className="w-6 h-6 mr-3 " />
               {data.socials[1].alt_text}
             </button>
           </div>
         </div>
 
         <img
-          className="flex justify-start rounded-2xl"
+          className="rounded-2xl  md:mr-0 mr-40 size-40  md:size-76"
           src={data.profileImage}
           alt="profilepic"
         />
       </div>
-    </div>
+    </section>
   );
 }

@@ -9,13 +9,13 @@ export default function FooterSection() {
   const { lang } = useContext(languageContext);
   const data = lang.footerSection;
   return (
-    <div className="flex flex-col justify-center p-20 items-center   bg-[var(--color-customFooterBack)] font-inter">
-      <h1 className="text-[var(--color-customFooterIcon)] text-5xl p-2 font-bold">
+    <section className="flex flex-col justify-center p-20 items-center   bg-[var(--color-customFooterBack)] font-inter">
+      <h1 className="text-[var(--color-customFooterIcon)]  text-3xl md:text-5xl p-2 font-bold">
         {data.sendMessage}{" "}
       </h1>
-      <p className="text-[var(--color-customFooterText)] font-normal text-center  my-4 text-2xl max-w-[550px]">
+      <h4 className="text-[var(--color-customFooterText)] font-normal text-center  my-4  text-lg md:text-2xl max-w-[550px]">
         {data.messageText}
-      </p>
+      </h4>
 
       <a
         href={`mailto:${data.email}`}
@@ -32,6 +32,6 @@ export default function FooterSection() {
         <MdOutlineAlternateEmail />
         <FaInstagram />
       </p>
-    </div>
+    </section>
   );
 }

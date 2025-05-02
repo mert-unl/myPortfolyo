@@ -6,7 +6,7 @@ export default function ProfilSection() {
   const data = lang.profileSection;
 
   return (
-    <div className="flex justify-center font-inter text-white py-26 bg-[var(--color-customBlue)]">
+    <section className="flex justify-center font-inter text-white py-26 bg-[var(--color-customBlue)]">
       <div className=" flex-col justify-center">
         <h1 className="text-[#CBF281] font-bold text-[48px]">{data.title}</h1>
 
@@ -14,26 +14,36 @@ export default function ProfilSection() {
           <div>
             <h1 className="text-[30px] font-medium">{data.basicInfo}</h1>
 
-            <div className="flex flex-row gap-5 mt-4">
-              <div className="flex flex-col text-[#CBF281] font-semibold  gap-6 text-[16px]">
-                <p>{data.birthDate}</p>
-                <p>{data.location}</p>
-                <p>{data.education}</p>
-                <p className="mt-5">{data.position}</p>
+            <div className="flex flex-col gap-2 mt-4">
+              <div className="flex flex-row gap-4">
+                <p className="text-[#CBF281] font-semibold text-[16px]">
+                  {data.birthDate}
+                </p>
+                <p className="text-[16px] font-normal">{data.birthInfo}</p>
               </div>
-
-              <div className="flex flex-col text-[16px] font-normal gap-6">
-                <p>{data.birthInfo}</p>
-                <p>{data.locationInfo}</p>
-                <p>{data.school}</p>
-                <p>{data.roleInfo}</p>
+              <div className="flex flex-row max-w-40 gap-4">
+                <p className="text-[#CBF281] font-semibold text-[16px]">
+                  {data.location}
+                </p>
+                <p className="text-[16px] font-normal">{data.locationInfo}</p>
+              </div>
+              <div className="flex flex-row gap-1">
+                <p className="text-[#CBF281]  max-w-20  font-semibold text-[16px]">
+                  {data.education}
+                </p>
+                <p className="text-[16px] max-w-40 font-normal">
+                  {data.school}
+                </p>
+              </div>
+              <div className="flex flex-row gap-4 mt-2">
+                <p className="text-[#CBF281] max-w-40 font-semibold text-[16px]">
+                  {data.position}
+                </p>
+                <p className="text-[16px] font-normal">{data.roleInfo}</p>
               </div>
             </div>
           </div>
-          <img
-            className="rounded-[10px] w-[290px] h-[300px]"
-            src={data.aboutPhoto}
-          />
+          <img className="rounded-[10px] w-80 h-80" src={data.aboutPhoto} />
 
           <div className="max-w-[340px]">
             <h1 className="text-[30px]">{data.aboutTitle}</h1>
@@ -41,6 +51,6 @@ export default function ProfilSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

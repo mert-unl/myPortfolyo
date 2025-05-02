@@ -6,17 +6,17 @@ export default function ProjectsSection() {
   const data = lang.projectsSection;
 
   return (
-    <section className="bg-[var(--color-customYellow2)]  font-inter py-8">
-      <div className="flex flex-col md:mx-88">
+    <section className="bg-[var(--color-customYellow2)]  font-inter py-12">
+      <div className="flex flex-col md:mx-78">
         <h1 className="text-[var(--color-customSkill)] text-[48px] font-bold">
           {data.title}
         </h1>
 
         {data.projects.map((projects) => (
           <div className="justify-center   shadow-[0px_18px_88px_-4px_rgba(24,39,75,0.14),0px_8px_28px_-6px_rgba(24,39,75,0.12)] my-4 bg-[var(--color-customWhite)] items-center rounded-[12px]">
-            <div className="flex  flex-col md:flex-row py-2 ">
+            <div className="flex  flex-col md:flex-row  ">
               <img
-                className="rounded-tl-[12px] rounded-bl-[12px]"
+                className="rounded-tl-[12px] rounded-bl-[12px] size-80"
                 src={projects.image}
               />
               <div className="flex flex-col gap-4 p-2 ml-5 justify-center">
@@ -26,7 +26,7 @@ export default function ProjectsSection() {
                 <p className="text-[var(--color-customBlackText)]">
                   {projects.description}
                 </p>
-                <div className="flex  flex-col md:flex-row gap-2 text-[14px] font-medium  text-white ">
+                <div className="flex  flex-col lg:flex-row gap-2 text-[14px] font-medium  text-white ">
                   {projects.usedTech.map((tech, index) => (
                     <div
                       className=" px-4 pt-2 pb-2 rounded-3xl bg-[var(--color-customButtonBack)]"

@@ -1,4 +1,4 @@
-export const languages = {
+/* export const languages = {
   tr: {
     // Hero Section
     heroSection: {
@@ -248,3 +248,4 @@ export const languages = {
     },
   },
 };
+*/
