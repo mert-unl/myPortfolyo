@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { languageContext } from "../App.jsx";
 import axios from "axios";
+import { languages } from "../data.jsx";
 
 export function HeroSection() {
   //TEMA
@@ -45,6 +46,16 @@ export function HeroSection() {
   };
 
   const data = lang.heroSection;
+
+  axios
+    .get("https://reqres.in/api/workintech")
+    .then((r) => console.log(r.data))
+    .catch((e) => console.log(e));
+
+  axios
+    .post("https://reqres.in/api/workintech", "hello world I'm Mert!")
+    .then((r) => console.log(r.data))
+    .catch((e) => console.log(e));
 
   return (
     <div

@@ -1,5 +1,3 @@
-import FooterSection from "./components/footerSection";
-
 export const languages = {
   tr: {
     // Hero Section
