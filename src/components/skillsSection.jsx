@@ -45,42 +45,25 @@ export default function SkillsSection() {
 
   return (
     <section className=" font-inter flex flex-row items-center justify-center h-screen bg-[var(--color-customWhite)]">
-      <div className="flex flex-row  justify-center gap-34">
+      <div className="flex  flex-col md:flex-row  justify-center gap-2 md:gap-34">
         <p className=" text-[48px] font-bold text-[var(--color-customSkill)]">
           {data.title}
         </p>
 
-        <div className="grid grid-cols-2  gap-8 font-inter ">
+        <div className="grid grid-cols-2 md:gap-20 gap-6  font-inter ">
           {data.skills.map((skills) => (
             <div className="flex flex-row items-center ">
               <img
-                className="rounded-[6px] h-[128px] w-[128px]"
+                className="rounded-md  h-16 w-16  md:h-32 md:w-32"
                 src={skills.icon}
                 alt={skills.name}
               />
-              <p className="text-[24px] ml-4 text-[var(--color-customTextSkills)] font-medium">
+              <p className=" text-xs md:text-2xl ml-2 text-[var(--color-customTextSkills)] font-medium">
                 {skills.name}
               </p>
             </div>
           ))}
         </div>
-
-        {/* Second row of skills 
-        <div className="grid grid-cols-1 gap-8">
-          {skills2.map((skills) => (
-            <div className="flex flex-row items-center">
-              <img
-                className="rounded-[6px] h-[128px] w-[128px]"
-                src={skills.icon}
-                alt={skills.name}
-              />
-              <p className="text-[24px] ml-4 text-[var(--color-customTextSkills)] font-medium">
-                {skills.name}
-              </p>
-            </div>
-          ))}
-        </div>
-        */}
       </div>
     </section>
   );

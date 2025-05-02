@@ -13,6 +13,8 @@ export function HeroSection() {
 
   const initialTheme = localStorage.getItem("theme") || "light";
 
+  //const localLang = localStorage.getItem("lang") || language;
+
   const [theme, setTheme] = useState(initialTheme);
   if (theme === "dark") {
     document.documentElement.classList.add("dark");
@@ -28,8 +30,10 @@ export function HeroSection() {
 
   const handleLanguageChange = () => {
     if (language === "en") {
+      localStorage.setItem("lang", "tr");
       setLanguage("tr");
     } else {
+      localStorage.setItem("lang", "en");
       setLanguage("en");
     }
   };
@@ -48,20 +52,78 @@ export function HeroSection() {
   const data = lang.heroSection;
 
   axios
-    .get("https://reqres.in/api/workintech")
-    .then((r) => console.log(r.data))
-    .catch((e) => console.log(e));
+    .post(
+      "https://reqres.in/api/register",
+      {
+        email: "eve.holt@reqres.in",
+        password: "cityslicka",
+      },
+      {
+        headers: {
+          "x-api-key": "reqres-free-v1",
+        },
+      }
+    )
+    .then((res) => {
+      console.log("Kayıt başarılı:", res.data);
+    })
+    .catch((err) => {
+      console.error("Kayıt hatası:", err.response?.data || err.message);
+    });
 
   axios
-    .post("https://reqres.in/api/workintech", "hello world I'm Mert!")
-    .then((r) => console.log(r.data))
-    .catch((e) => console.log(e));
+    .post(
+      "https://reqres.in/api/login",
+      {
+        email: "eve.holt@reqres.in",
+        password: "pistol",
+      },
+      {
+        headers: {
+          "x-api-key": "reqres-free-v1",
+        },
+      }
+    )
+    .then((res) => {
+      console.log("Giriş başarılı:", res.data);
+    })
+    .catch((err) => {
+      console.error("Giriş hatası:", err.response?.data || err.message);
+    });
+
+  axios
+    .post(
+      "https://reqres.in/api/workintech",
+      {
+        languages,
+      },
+      {
+        headers: {
+          "x-api-key": "reqres-free-v1",
+        },
+      }
+    )
+    .then((res) => {
+      console.log("Workintech başarılı:", res.data);
+    })
+    .catch((err) => {
+      console.error("Workintech hatası:", err.response?.data || err.message);
+    });
+
+  axios
+    .get("https://reqres.in/api/workintech")
+    .then((res) => {
+      console.log("Workintechget başarılı:", res.data);
+    })
+    .catch((err) => {
+      console.error("Workintechget hatası:", err.response?.data || err.message);
+    });
 
   return (
     <div
-      className={`bg-[linear-gradient(to_right,_var(--color-customBlue)_67%,_var(--color-customYellow)_33%)] flex flex-col h-screen font-[var(--font-inter)] items-center`}
+      className={`bg-[linear-gradient(to_right,_var(--color-customBlue)_70%,_var(--color-customYellow)_33%)] flex flex-col h-screen font-[var(--font-inter)] items-center`}
     >
-      <div className="flex flex-row justify-end ms-135 font-bold text-[15px] mt-6  space-x-5">
+      <div className="flex flex-col sm:flex-row  justify-center font-bold text-[15px] mt-6  space-x-5">
         <p
           onClick={handleLanguageChange}
           className="text-[var(--color-customLang1)] cursor-pointer"
@@ -70,7 +132,7 @@ export function HeroSection() {
           <span className="text-[var(--color-customLang2)]">{data.lang2}</span>
         </p>
 
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <div className="relative inline-block ">
             {/*Dış kısmı */}
             <input
@@ -129,8 +191,9 @@ export function HeroSection() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col">
-        <p className="text-[#CBF281] text-[32px] font-bold mr-185">
+
+      <div className="flex flex-col ">
+        <p className="text-[#CBF281] text-[32px] font-bold flex-start">
           {data.name}
         </p>
         <p
@@ -140,16 +203,17 @@ export function HeroSection() {
           Special Theme
         </p>
       </div>
-      <div className="flex flex-row mt-[148px] space-x-25 items-center">
+
+      <div className="flex sm:flex-row flex-col mt-[148px] space-x-25 items-center">
         <div className="flex flex-col  max-w-[529px]  space-y-5 pt-10">
-          <h1 className="text-[54px]  font-inter font-bold text-[#CBF281]">
+          <h1 className="text-3xl  md:text-5xl  font-inter font-bold text-[#CBF281]">
             {data.title}
           </h1>
-          <p className="text-white font-inter text-[24px] ">
+          <p className="text-white font-inter  text-md md:text-2xl ">
             {data.description}
           </p>
 
-          <div className="flex flex-row gap-1">
+          <div className="flex flex-col  sm:flex-row gap-1">
             <button
               onClick={() =>
                 window.open(
@@ -183,11 +247,9 @@ export function HeroSection() {
         </div>
 
         <img
-          className="rounded-[18px]"
+          className="flex justify-start rounded-2xl"
           src={data.profileImage}
           alt="profilepic"
-          width="350px"
-          height="375px"
         />
       </div>
     </div>

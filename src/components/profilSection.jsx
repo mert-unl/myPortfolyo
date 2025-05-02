@@ -6,11 +6,11 @@ export default function ProfilSection() {
   const data = lang.profileSection;
 
   return (
-    <div className=" font-inter text-white py-24 bg-[var(--color-customBlue)]">
-      <div className=" flex-col mx-90">
+    <div className="flex justify-center font-inter text-white py-26 bg-[var(--color-customBlue)]">
+      <div className=" flex-col justify-center">
         <h1 className="text-[#CBF281] font-bold text-[48px]">{data.title}</h1>
 
-        <div className="flex flex-row gap-8 mt-4">
+        <div className="flex flex-col md:flex-row gap-8 mt-4">
           <div>
             <h1 className="text-[30px] font-medium">{data.basicInfo}</h1>
 
