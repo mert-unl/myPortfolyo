@@ -3,6 +3,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { languageContext } from "../App.jsx";
+import axios from "axios";
 
 export function HeroSection() {
   //TEMA
@@ -44,8 +45,6 @@ export function HeroSection() {
   };
 
   const data = lang.heroSection;
-
-  //DİL
 
   return (
     <div
@@ -141,6 +140,13 @@ export function HeroSection() {
 
           <div className="flex flex-row gap-1">
             <button
+              onClick={() =>
+                window.open(
+                  data.socials[0].link,
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
               type="button"
               className="text-[var(--color-customGithubText)] bg-[var(--color-customGithubBack)] border border-white hover:bg-[var(--color-customLang1)]  text-l font-medium rounded-[6px] w-32 h-13 p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
@@ -149,6 +155,13 @@ export function HeroSection() {
             </button>
 
             <button
+              onClick={() =>
+                window.open(
+                  data.socials[1].link,
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
               type="button"
               className="text-[var(--color-customGithubText)]  bg-[var(--color-customGithubBack)] border border-white text-l  hover:bg-[var(--color-customLang1)] font-medium rounded-[6px] w-35 h-13  p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
