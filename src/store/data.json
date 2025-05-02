@@ -83,7 +83,7 @@
             "usedTech": ["HTML", "CSS", "JavaScript"],
             "image": "https://picsum.photos/350/375?4",
             "linkWebsite": "",
-            "linkGithub": ""
+            "linkGithub": "https://github.com/mert-unl/WitFlix"
           },
           {
             "name": "Dungeon Warrior",
@@ -92,6 +92,14 @@
             "image": "https://picsum.photos/350/375?7",
             "linkWebsite": "https://play.google.com/store/apps/details?id=com.dwrelease.dungeonwarrior&hl=tr",
             "linkGithub": "https://github.com/mert-unl/Dungeon-Warrior-Readme"
+          },
+          {
+            "name": "Asteroid Shooter",
+            "description": "Uzayda düşmanlarını avla ve asteroidlerden kaçınırken puanları topla. Bu galaksinin liderisinin kim olduğunu herkese göster!",
+            "usedTech": ["Html","Css","JavaScript"],
+            "image": "https://picsum.photos/350/375?91",
+            "linkWebsite": "https://asteroid-shooter.vercel.app/",
+            "linkGithub": "https://github.com/mert-unl/AsteroidShooter"
           }
         ],
         "viewSite": "Siteye Git",
@@ -188,7 +196,7 @@
             "usedTech": ["HTML", "CSS", "JavaScript"],
             "image": "https://picsum.photos/350/375?4",
             "linkWebsite": "",
-            "linkGithub": ""
+            "linkGithub": "https://github.com/mert-unl/WitFlix"
           },
           {
             "name": "Dungeon Warrior",
@@ -197,6 +205,13 @@
             "image": "https://picsum.photos/350/375?7",
             "linkWebsite": "https://play.google.com/store/apps/details?id=com.dwrelease.dungeonwarrior&hl=en",
             "linkGithub": "https://github.com/mert-unl/Dungeon-Warrior-Readme"
+          },
+          {
+            "name": "Asteroid Shooter",
+            "description": "Hunt down your enemies in space and collect points while dodging asteroids. Show everyone who the real leader of this galaxy is!",    "usedTech": ["Html","Css","JavaScript"],
+            "image": "https://picsum.photos/350/375?91",
+            "linkWebsite": "https://asteroid-shooter.vercel.app/",
+            "linkGithub": "https://github.com/mert-unl/AsteroidShooter"
           }
         ],
         "viewSite": "View Site",
