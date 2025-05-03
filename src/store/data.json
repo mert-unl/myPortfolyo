@@ -27,27 +27,26 @@
         "skills": [
           {
             "name": "JAVASCRIPT",
-            "icon": "src/assets/js-logo.png"
+            "icon": "assets/js-logo.png"
           },
-          {
-            "name": "NODE",
-            "icon": "src/assets/node-logo.png"
+{                  "name": "NODE",
+            "icon": "assets/node-logo.png"
           },
           {
             "name": "REACT",
-            "icon": "src/assets/React-logo.png"
+            "icon": "assets/React-logo.png"
           },
           {
             "name": "FIGMA",
-            "icon": "src/assets/figma-logo.png"
+            "icon": "assets/figma-logo.png"
           },
           {
             "name": "VS CODE",
-            "icon": "src/assets/vscode-logo.png"
+            "icon": "assets/vscode-logo.png"
           },
           {
             "name": "REDUX",
-            "icon": "src/assets/redux-logo.png"
+            "icon": "assets/redux-logo.png"
           }
         ]
       },
@@ -139,27 +138,27 @@
         "skills": [
           {
             "name": "JAVASCRIPT",
-            "icon": "src/assets/js-logo.png"
+            "icon": "assets/js-logo.png"
           },
           {
             "name": "NODE",
-            "icon": "src/assets/node-logo.png"
+            "icon": "assets/node-logo.png"
           },
           {
             "name": "REACT",
-            "icon": "src/assets/React-logo.png"
+            "icon": "assets/React-logo.png"
           },
           {
             "name": "FIGMA",
-            "icon": "src/assets/figma-logo.png"
+            "icon": "assets/figma-logo.png"
           },
           {
             "name": "VS CODE",
-            "icon": "src/assets/vscode-logo.png"
+            "icon": "assets/vscode-logo.png"
           },
           {
             "name": "REDUX",
-            "icon": "src/assets/redux-logo.png"
+            "icon": "assets/redux-logo.png"
           }
         ]
       },

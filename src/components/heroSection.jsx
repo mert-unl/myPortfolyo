@@ -4,14 +4,11 @@ import { FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { languageContext } from "../App.jsx";
 import axios from "axios";
-//import { languages } from "../store/data.jsx";
 import { toast } from "react-toastify";
 
 import dataLang from "../store/data.json";
 
 export function HeroSection() {
-  //TEMA
-
   console.log("json:" + JSON.stringify(dataLang));
 
   const { language, setLanguage, lang } = useContext(languageContext);
@@ -123,6 +120,8 @@ export function HeroSection() {
     )
     .then((res) => {
       console.log("Workintech başarılı:", res.data);
+
+      console.log(res.data.tr.heroSection.name);
     })
     .catch((err) => {
       console.error("Workintech hatası:", err.response?.data || err.message);
