@@ -3,10 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
 @theme {
-  
-} */
+  --font-inter: "Inter";
+}
 :root {
   --color-customLang1: #caf181;
   --color-customLang2: #d9d9d9;
@@ -30,8 +29,6 @@
   --color-customFooterBack: #f9f9f9;
   --color-customFooterText: #120b39;
   --color-customFooterIcon: #4731d3;
-
-  --font-inter: "Inter";
 }
 
 .dark {
@@ -57,11 +54,8 @@
   --color-customFooterBack: #252128;
   --color-customFooterText: #ffffff;
   --color-customFooterIcon: #8f88ff;
-
-  --font-inter: "Inter", sans-serif;
 }
 
-/* 🌇 Turuncu & Siyah Teması */
 .orange {
   --color-customLang1: #ff9e4d;
   --color-customLang2: #c4c4c4;
@@ -87,9 +81,8 @@
   --color-customFooterIcon: #ff9e4d;
 }
 
-/* Dark tema için variant tanımı */
 @custom-variant dark (&:where(.dark, .dark *));
-/* Sepia tema için variant tanımı */
+
 @custom-variant orange (&:where(.orange, .orange *));
 
 /*

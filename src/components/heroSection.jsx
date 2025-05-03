@@ -4,64 +4,17 @@ import { FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { languageContext } from "../App.jsx";
 import axios from "axios";
-import { toast } from "react-toastify";
-
 import dataLang from "../store/data.json";
+import { useDarkmode } from "../hooks/useDarkmode.jsx";
+import { useLanguageSwitch } from "../hooks/useLanguageSwitch.jsx";
 
 export function HeroSection() {
   console.log("json:" + JSON.stringify(dataLang));
 
   const { language, setLanguage, lang } = useContext(languageContext);
 
-  const initialTheme = localStorage.getItem("theme") || "light";
-
-  //const localLang = localStorage.getItem("lang") || language;
-
-  const [theme, setTheme] = useState(initialTheme);
-  if (theme === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-
-    if (language === "tr") {
-      toast.success(
-        `Tema ${newTheme === "dark" ? "koyu" : "açık"} moda ayarlandı!`
-      );
-    } else {
-      toast.success(
-        `Theme set to ${newTheme === "dark" ? "dark" : "light"} mode!`
-      );
-    }
-  };
-
-  const handleLanguageChange = () => {
-    if (language === "en") {
-      localStorage.setItem("lang", "tr");
-      setLanguage("tr");
-      toast.success("Dil Türkçe'ye ayarlandı!");
-    } else {
-      localStorage.setItem("lang", "en");
-      setLanguage("en");
-      toast.success("Language switched to English!");
-    }
-  };
-
-  const handleOrange = () => {
-    setTheme((prevTheme) =>
-      prevTheme === "light" || "dark" ? "orange" : "light"
-    );
-
-    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
-
-    setTheme("orange");
-    document.documentElement.classList.add("orange");
-  };
+  const { handleLanguageChange } = useLanguageSwitch(language, setLanguage);
+  const { theme, toggleTheme, setOrangeTheme } = useDarkmode(language);
 
   const data = lang.heroSection;
 
@@ -120,8 +73,6 @@ export function HeroSection() {
     )
     .then((res) => {
       console.log("Workintech başarılı:", res.data);
-
-      console.log(res.data.tr.heroSection.name);
     })
     .catch((err) => {
       console.error("Workintech hatası:", err.response?.data || err.message);
@@ -201,9 +152,9 @@ export function HeroSection() {
       </div>
 
       <div className="flex   mr-70 md:mr-204 flex-col">
-        <p className="text-[#CBF281] text-4xl font-bold ">{data.name}</p>
+        <p className="text-[#CBF281] text-4xl font-bold  ">{data.name}</p>
         <p
-          onClick={handleOrange}
+          onClick={() => setOrangeTheme()}
           className="text-white font-medium cursor-pointer text-sm"
         >
           Special Theme
@@ -229,7 +180,7 @@ export function HeroSection() {
                 )
               }
               type="button"
-              className="text-[var(--color-customGithubText)] bg-[var(--color-customGithubBack)] border border-white hover:bg-[var(--color-customLang1)]  text-l font-medium rounded-[6px] w-32 h-13 p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
+              className="text-[var(--color-customGithubText)] shadow-[0px_18px_88px_-4px_rgba(24,39,75,0.5),0px_8px_28px_-6px_rgba(24,39,75,0.5)] bg-[var(--color-customGithubBack)] border border-white hover:bg-[var(--color-customLang1)]  text-l font-medium rounded-[6px] w-32 h-13 p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
               <FaGithub className="w-6 h-6 mr-3" />
               {data.socials[0].alt_text}
@@ -244,7 +195,7 @@ export function HeroSection() {
                 )
               }
               type="button"
-              className="text-[var(--color-customGithubText)]  bg-[var(--color-customGithubBack)] border border-white text-l  hover:bg-[var(--color-customLang1)] font-medium rounded-[6px] w-35 h-13  p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
+              className="text-[var(--color-customGithubText)] shadow-[0px_18px_88px_-4px_rgba(24,39,75,0.5),0px_8px_28px_-6px_rgba(24,39,75,0.5)] bg-[var(--color-customGithubBack)] border border-white text-l  hover:bg-[var(--color-customLang1)] font-medium rounded-[6px] w-35 h-13  p-4 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
             >
               <FaLinkedinIn className="w-6 h-6 mr-3 " />
               {data.socials[1].alt_text}
@@ -253,7 +204,7 @@ export function HeroSection() {
         </div>
 
         <img
-          className="rounded-2xl  md:mr-0 mr-40 size-40  md:size-76"
+          className="rounded-2xl  shadow-[0px_18px_88px_-4px_rgba(24,39,75,0.5),0px_8px_28px_-6px_rgba(24,39,75,0.5)] md:mr-0 mr-40 size-40  md:size-76"
           src={data.profileImage}
           alt="profilepic"
         />

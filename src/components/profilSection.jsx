@@ -43,7 +43,10 @@ export default function ProfilSection() {
               </div>
             </div>
           </div>
-          <img className="rounded-[10px] w-80 h-80" src={data.aboutPhoto} />
+          <img
+            className="rounded-[10px] shadow-[0px_18px_88px_-4px_rgba(24,39,75,0.5),0px_8px_28px_-6px_rgba(24,39,75,0.5)] w-80 h-80"
+            src={data.aboutPhoto}
+          />
 
           <div className="max-w-[340px]">
             <h1 className="text-[30px]">{data.aboutTitle}</h1>

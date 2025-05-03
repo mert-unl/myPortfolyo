@@ -10,7 +10,7 @@ export default function SkillsSection() {
 
   return (
     <section className=" font-inter flex flex-row items-center justify-center gap-20 py-30   bg-[var(--color-customWhite)]">
-      <div className="flex  flex-col md:flex-row  md:ms-40 gap-2 md:gap-50">
+      <div className="flex  flex-col md:flex-row  md:ms-40 gap-2 md:gap-40">
         <p className=" text-[48px] font-bold text-[var(--color-customSkill)]">
           {data.title}
         </p>
