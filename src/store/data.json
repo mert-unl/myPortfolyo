@@ -70,7 +70,7 @@
         "projects": [
           {
             "name": "Pizza Projesi",
-            "description": "Kod ve yazılım temalı eğlenceli bir pizza mağazası arayüzü geliştirdim. Kullanıcılar, çeşitli pizzaları seçerek kendi siparişlerini oluşturabiliyor ve sipariş süreçlerini adım adım takip edebiliyor. Uygulamada kodlama dünyasına göndermeler yapan eğlenceli metinler ve görseller kullanıldı. React ve Context API ile dinamik bir kullanıcı deneyimi sunulurken, form doğrulama ve responsif tasarım gibi önemli kullanıcı arayüzü prensiplerine de dikkat edildi. Hem karın hem de zihin doyuran bir deneyim sunmayı amaçladım.",
+            "description": "Kod ve yazılım temalı eğlenceli bir pizza mağazası arayüzü geliştirdim. Kullanıcılar, çeşitli pizzaları seçerek kendi siparişlerini oluşturabiliyor ve sipariş süreçlerini adım adım takip edebiliyor. Uygulamada kodlama dünyasına göndermeler yapan eğlenceli metinler ve görseller kullanıldı.",
             "usedTech": ["HTML", "CSS", "JavaScript"],
             "image": "https://picsum.photos/350/375?12",
             "linkWebsite": "https://mypizzastore.vercel.app/",
@@ -78,7 +78,7 @@
           },
           {
             "name": "Mertflix",
-            "description": "Mertflix, popüler video platformu Netflix'in bir klonudur. Bu projede kullanıcılar film ve dizi içeriklerini kategorilere göre gezebilir, detay sayfalarına ulaşabilir ve video oynatıcı ile içerikleri izleyebilir.",
+            "description": "Mertflix, popüler video platformu Netflix'in bir klonudur. Bu projede kullanıcılar film ve dizi içeriklerini kategorilere göre gezebilir, detay sayfalarına ulaşabilir.",
              "usedTech": ["HTML", "CSS", "JavaScript"],
             "image": "https://picsum.photos/350/375?4",
             "linkWebsite": "",
@@ -182,7 +182,7 @@
         "projects": [
           {
             "name": "Pizza Store",
-            "description": "I developed a fun, code-themed pizza store interface where users can customize and place their orders. The app features witty references to the world of coding and software development, providing both a tasty and intellectually engaging experience. Users can build their own",  "usedTech": ["HTML", "CSS", "JavaScript"],
+            "description": "I developed a fun, code-themed pizza store interface where users can customize and place their orders. The app features witty references to the world of coding and software development, providing both a tasty and intellectually engaging experience.",  "usedTech": ["HTML", "CSS", "JavaScript"],
             "image": "https://picsum.photos/350/375?12",
             "linkWebsite": "https://mypizzastore.vercel.app/",
             "linkGithub": "https://github.com/mert-unl/fsweb-s8-challenge-pizza",
